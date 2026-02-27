@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Office GPT Wrapper - Taskpane</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      type="text/javascript"
+      src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"
+    ></script>
+    <script type="module" crossorigin src="./assets/taskpane-56037dc3.js"></script>
+    <link rel="stylesheet" href="./assets/taskpane-73bda678.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // #region agent log
+      fetch('http://127.0.0.1:7551/ingest/a3fced4e-c792-4eee-9f8f-20ed1679acb9', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Debug-Session-Id': 'e61d90'
+        },
+        body: JSON.stringify({
+          sessionId: 'e61d90',
+          runId: 'run1',
+          hypothesisId: 'H1',
+          location: 'taskpane.html:before-main-script',
+          message: 'Taskpane HTML loaded',
+          data: { href: window.location.href },
+          timestamp: Date.now()
+        })
+      }).catch(() => {});
+      // #endregion agent log
+    </script>
+    
+  </body>
+</html>
